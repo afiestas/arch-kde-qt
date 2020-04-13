@@ -15,6 +15,9 @@ ENV KDE_SESSION_VERSION=5
 ENV KDE_FULL_SESSION=true
 ENV CMAKE_MODULE_PATH=/opt/kde5/share/:$CMAKE_MODULE_PATH
 
+COPY pacman.conf /etc/pacman.conf
+
+RUN pacman -Syu --noconfirm
 RUN pacman -Sy --asdeps plasma-meta --noconfirm
 RUN pacman -Sy git base-devel --noconfirm
 RUN pacman -Sy --noconfirm \
@@ -32,4 +35,3 @@ RUN mkdir -p /opt/kde5 /opt/qt5 /home/afiestas/Projects/ /home/afiestas/Projects
 
 COPY build-qt /usr/bin/
 COPY build-kde /usr/bin/
-COPY pacman.conf /etc/pacman.conf
