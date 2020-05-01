@@ -18,7 +18,7 @@ ENV CMAKE_MODULE_PATH=/opt/kde5/share/:$CMAKE_MODULE_PATH
 COPY pacman.conf /etc/pacman.conf
 
 RUN pacman -Syu --noconfirm
-RUN pacman -Sy --asdeps plasma-meta --noconfirm
+RUN pacman -Sy --asdeps plasma-meta phonon-qt5-vlc krfb kdenlive kwave --noconfirm
 RUN pacman -Sy git base-devel --noconfirm
 RUN pacman -Sy --noconfirm \
                 'python2' 'gperf' 'jsoncpp' 'ninja' 'python' 'vulkan-headers' \
@@ -28,7 +28,7 @@ RUN pacman -Sy --noconfirm \
                 'mariadb-libs' 'unixodbc' 'postgresql-libs' 'gtk3' 'cups' 'freetds' \
                 perl re2  'krb5' libgravatar boost perl-io-socket-ssl perl-yaml-syck python-sphinx \
                 docbook-xsl doxygen libkdcraw sane ruby-test-unit swig xsd sassc python-cairo gtk2 \
-                libraw llvm subversion astyle clang
+                libraw llvm subversion astyle clang intltool libvncserver
 
 
 RUN mkdir -p /opt/kde5 /opt/qt5 /home/afiestas/Projects/ /home/afiestas/Projects/kde5
