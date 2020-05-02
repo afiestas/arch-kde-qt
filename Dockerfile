@@ -31,7 +31,7 @@ RUN pacman -Sy --noconfirm \
                 libraw llvm subversion astyle clang intltool libvncserver
 
 
-RUN mkdir -p /opt/kde5 /opt/qt5 /home/afiestas/Projects/ /home/afiestas/Projects/kde5
+RUN mkdir -p /opt/kde5 /opt/qt5 /home/afiestas/Projects/ /home/afiestas/Projects/kde5 /usr/lib/libffi-3.2.1/include
 
 COPY build-qt /usr/bin/
 COPY build-kde /usr/bin/
