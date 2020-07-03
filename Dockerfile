@@ -28,7 +28,8 @@ RUN pacman -Sy --noconfirm \
                 'mariadb-libs' 'unixodbc' 'postgresql-libs' 'gtk3' 'cups' 'freetds' \
                 perl re2  'krb5' libgravatar boost perl-io-socket-ssl perl-yaml-syck python-sphinx \
                 docbook-xsl doxygen libkdcraw sane ruby-test-unit swig xsd sassc python-cairo gtk2 \
-                libraw llvm subversion astyle clang intltool libvncserver eigen freecell-solver
+                libraw llvm subversion astyle clang intltool libvncserver eigen freecell-solver    \
+                python-sip python-pyqt5 quazip gsl vc opencolorio libheif sip
 
 
 RUN mkdir -p /opt/kde5 /opt/qt5 /home/afiestas/Projects/ /home/afiestas/Projects/kde5 /usr/lib/libffi-3.2.1/include
