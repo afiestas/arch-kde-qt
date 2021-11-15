@@ -34,7 +34,8 @@ RUN pacman -Sy --noconfirm \
                 docbook-xsl doxygen libkdcraw sane ruby-test-unit swig xsd sassc python-cairo gtk2 \
                 libraw llvm subversion astyle clang intltool libvncserver eigen freecell-solver    \
                 python-sip python-pyqt5 quazip gsl vc opencolorio libheif sip libmtp qgpgme tinyxml2 \
-                libdwarf libspectre libpwquality
+                libdwarf libspectre libpwquality meson cppcheck xf86-input-evdev xf86-input-libinput \
+                xorg-server-devel
 
 
 
