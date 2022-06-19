@@ -6,9 +6,9 @@ rm -rf /opt/qt5/*
 rm -rf /home/afiestas/Projects/qt5
 
 cd /home/afiestas/Projects/
-git clone git://code.qt.io/qt/qt5.git --branch 5.15
+git clone https://invent.kde.org/qt/qt/qt5.git --branch kde/5.15
 cd qt5
-./init-repository --branch
+./init-repository
 mkdir build
 cd build/
 ../configure -prefix /opt/qt5 -opensource -confirm-license -nomake tests -nomake examples -dbus -no-separate-debug-info -xcb -qpa xcb -release -force-debug-info -reduce-relocations -optimized-qmake -no-pch -openssl-linked -no-rpath -dbus-linked -system-harfbuzz -journald -no-use-gold-linker -webengine-proprietary-codecs
