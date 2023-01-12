@@ -32,7 +32,8 @@ RUN pacman -Sy --noconfirm \
     libraw llvm subversion astyle clang intltool libvncserver eigen freecell-solver    \
     python-pyqt5 quazip gsl vc opencolorio libheif sip libmtp qgpgme tinyxml2 \
     libdwarf libspectre libpwquality meson cppcheck xf86-input-libinput \
-    xorg-server-devel nodejs kimageannotator perl-net-dbus openssl-1.1
+    xorg-server-devel nodejs kimageannotator perl-net-dbus openssl-1.1 wayland-protocols \
+    djvulibre chmlib
 
 
 
