@@ -41,3 +41,4 @@ MAKE_THREADS=$1
 
 make -j$MAKE_THREADS
 make -j$MAKE_THREADS install
+sed -e "s|5.15.13\ |5.15.6 |" -i /opt/qt5/lib/cmake/*/*Config.cmake
