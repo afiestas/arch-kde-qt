@@ -26,6 +26,14 @@ patch -p1 -d /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty -i $PATCHES_PA
 patch -p1 -d /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty -i $PATCHES_PATH/qt5-webengine-pipewire-0.3.patch
 patch -p1 -d /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty -i $PATCHES_PATH/qt5-webengine-gcc12.patch
 
+# More python3 stuff for QtWebEngine
+git clone https://chromium.googlesource.com/catapult
+cd catapult
+git checkout 5eedfe23148a234211ba477f76fc2ea2e8529189
+cd ..
+rm -rf /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty/chromium/third_party/catapult
+mv catapult /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty/chromium/third_party/catapult
+
 mkdir build
 cd build/
 ../configure -prefix /opt/qt5 -opensource -confirm-license -nomake tests -nomake examples -dbus -no-separate-debug-info -xcb -qpa xcb -release -force-debug-info -reduce-relocations -optimized-qmake -no-pch -openssl-linked -no-rpath -dbus-linked -system-harfbuzz -journald -no-use-gold-linker -webengine-proprietary-codecs -system-ffmpeg
