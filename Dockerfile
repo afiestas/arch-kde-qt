@@ -15,7 +15,7 @@ ENV KDE_SESSION_VERSION=5
 ENV KDE_FULL_SESSION=true
 ENV CMAKE_MODULE_PATH=/opt/kde5/share/:$CMAKE_MODULE_PATH
 
-#COPY pacman.conf /etc/pacman.conf
+COPY mirrorlist /etc/pacman.d/mirrorlist
 
 RUN pacman-key --init && pacman -Sy --noconfirm archlinux-keyring pacman
 RUN pacman -Syu --noconfirm
