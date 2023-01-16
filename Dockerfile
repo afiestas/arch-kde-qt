@@ -17,6 +17,7 @@ ENV CMAKE_MODULE_PATH=/opt/kde5/share/:$CMAKE_MODULE_PATH
 
 COPY mirrorlist /etc/pacman.d/mirrorlist
 
+RUN sed -i 's/ParallelDownloads = 5/ParallelDownloads = 20/' /etc/pacman.conf
 RUN pacman-key --init && pacman -Sy --noconfirm archlinux-keyring pacman
 RUN pacman -Syu --noconfirm
 RUN pacman -Sy --asdeps plasma-meta phonon-qt5-vlc krfb kdenlive kwave --noconfirm
