@@ -34,7 +34,7 @@ RUN pacman -Sy --noconfirm \
     python-pyqt5 quazip gsl vc opencolorio libheif sip libmtp qgpgme tinyxml2 \
     libdwarf libspectre libpwquality meson cppcheck xf86-input-libinput \
     xorg-server-devel nodejs kimageannotator perl-net-dbus openssl-1.1 wayland-protocols \
-    djvulibre chmlib
+    djvulibre chmlib wget
 
 
 
