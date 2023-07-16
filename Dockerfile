@@ -20,7 +20,7 @@ COPY mirrorlist /etc/pacman.d/mirrorlist
 RUN sed -i 's/ParallelDownloads = 5/ParallelDownloads = 20/' /etc/pacman.conf
 RUN pacman-key --init && pacman -Sy --noconfirm archlinux-keyring pacman
 RUN pacman -Syu --noconfirm
-RUN pacman -Sy --asdeps plasma-meta phonon-qt6-vlc krfb kdenlive kwave --noconfirm
+RUN pacman -Sy --asdeps plasma-meta krfb kdenlive kwave --noconfirm
 RUN pacman -Sy git base-devel --noconfirm
 RUN pacman -Sy --noconfirm \
     gperf jsoncpp ninja python vulkan-headers \
