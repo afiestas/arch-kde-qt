@@ -2,43 +2,16 @@
 
 set -xe
 
-rm -rf /opt/qt5/*
-rm -rf /home/afiestas/Projects/qt5
+rm -rf /opt/qt6/*
+rm -rf /home/afiestas/Projects/qt6
 
 cd /home/afiestas/Projects/
-git clone https://invent.kde.org/qt/qt/qt5.git --branch kde/5.15
-cd qt5
+git clone git://code.qt.io/qt/qt5.git --branch dev qt6
+cd qt6
 ./init-repository
-
-# Patches for QtWebEngine, python3, ffmpeg5, etc for python3
-PATCHES_PATH=/home/afiestas/Projects/qt5-patches/
-
-rm -rf $PATCHES_PATH
-mkdir -p $PATCHES_PATH
-wget https://github.com/archlinux/svntogit-packages/archive/refs/heads/packages/qt5-webengine.zip
-unzip qt5-webengine.zip -d $PATCHES_PATH
-mv $PATCHES_PATH/svntogit-packages-packages-qt5-webengine/trunk/* $PATCHES_PATH
-rm -rf $PATCHES_PATH/svntogit-packages-packages-qt5-webengine/
-
-patch -p1 -d /home/afiestas/Projects/qt5/qtwebengine/ -i $PATCHES_PATH/qt5-webengine-python3.patch
-patch -p1 -d /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty -i $PATCHES_PATH/qt5-webengine-chromium-python3.patch
-patch -p1 -d /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty -i $PATCHES_PATH/qt5-webengine-ffmpeg5.patch
-patch -p1 -d /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty -i $PATCHES_PATH/qt5-webengine-pipewire-0.3.patch
-patch -p1 -d /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty -i $PATCHES_PATH/qt5-webengine-gcc12.patch
-
-# More python3 stuff for QtWebEngine
-git clone https://chromium.googlesource.com/catapult
-cd catapult
-git checkout 5eedfe23148a234211ba477f76fc2ea2e8529189
-cd ..
-rm -rf /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty/chromium/third_party/catapult
-mv catapult /home/afiestas/Projects/qt5/qtwebengine/src/3rdparty/chromium/third_party/catapult
 
 mkdir build
 cd build/
-../configure -prefix /opt/qt5 -opensource -confirm-license -nomake tests -nomake examples -dbus -no-separate-debug-info -xcb -qpa xcb -release -force-debug-info -reduce-relocations -optimized-qmake -no-pch -openssl-linked -no-rpath -dbus-linked -system-harfbuzz -journald -no-use-gold-linker -webengine-proprietary-codecs -system-ffmpeg
-MAKE_THREADS=$1
+cmake ../ -DCMAKE_INSTALL_PREFIX=/opt/qt6 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DFEATURE_journald=ON DFEATURE_libproxy=ON -DFEATURE_openssl_linked=ON -DFEATURE_system_sqlite=ON -DFEATURE_system_xcb_xinput=ON -DFEATURE_no_direct_extern_access=ON -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON -DCMAKE_MESSAGE_LOG_LEVEL=STATUS -DQT_FEATURE_webengine_system_ffmpeg=ON -DQT_FEATURE_webengine_system_icu=ON -DQT_FEATURE_webengine_system_libevent=ON -DQT_FEATURE_webengine_proprietary_codecs=ON -DQT_FEATURE_webengine_kerberos=ON -DQT_FEATURE_webengine_webrtc_pipewire=ON -GNinja
 
-make -j$MAKE_THREADS
-make -j$MAKE_THREADS install
-sed -e "s|5.15.14\ |5.15.9 |" -i /opt/qt5/lib/cmake/*/*Config.cmake
+ninja install

@@ -2,14 +2,14 @@ FROM archlinux
 
 WORKDIR /home/afiestas/Projects/
 
-ENV KF5=/opt/kde6
+ENV KF6=/opt/kde6
 ENV QTDIR=/opt/qt6
 ENV LD_LIBRARY_PATH=/opt/kde6/lib:/opt/kde6/lib64:/opt/qt6/lib:/usr/lib
-ENV XDG_DATA_DIRS=$KF5/share:$XDG_DATA_DIRS:/usr/share
-ENV XDG_CONFIG_DIRS=$KF5/etc/xdg:$XDG_CONFIG_DIRS:/etc/xdg
-ENV PATH=$KF5/bin:$KF5/usr/bin:$QTDIR/bin:$PATH
-ENV QT_PLUGIN_PATH=$KF5/lib/plugins:$KF5/lib64/plugins:$KF5/lib/x86_64-linux-gnu/plugins:$QTDIR/plugins:$QT_PLUGIN_PATH
-ENV QML2_IMPORT_PATH=$KF5/lib/qml:$KF5/lib64/qml:$KF5/lib/x86_64-linux-gnu/qml:$QTDIR/qml
+ENV XDG_DATA_DIRS=$KF6/share:$XDG_DATA_DIRS:/usr/share
+ENV XDG_CONFIG_DIRS=$KF6/etc/xdg:$XDG_CONFIG_DIRS:/etc/xdg
+ENV PATH=$KF6/bin:$KF6/usr/bin:$QTDIR/bin:$PATH
+ENV QT_PLUGIN_PATH=$KF6/lib/plugins:$KF6/lib64/plugins:$KF6/lib/x86_64-linux-gnu/plugins:$QTDIR/plugins:$QT_PLUGIN_PATH
+ENV QML2_IMPORT_PATH=$KF6/lib/qml:$KF6/lib64/qml:$KF6/lib/x86_64-linux-gnu/qml:$QTDIR/qml
 ENV QML_IMPORT_PATH=$QML2_IMPORT_PATH
 ENV KDE_SESSION_VERSION=5
 ENV KDE_FULL_SESSION=true

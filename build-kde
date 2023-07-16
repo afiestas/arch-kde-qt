@@ -2,8 +2,8 @@
 
 set -x
 
-rm -rf /opt/kde5/*
+rm -rf /opt/kde6/*
 
-cd /home/afiestas/Projects/kde5/kdesrc-build
+cd /home/afiestas/Projects/kde6/kdesrc-build
 
 ./kdesrc-build $1

@@ -1,21 +1,10 @@
-export MESA_LOADER_DRIVER_OVERRIDE=iris
-export KF5=/opt/kde5
-export QTDIR=/opt/qt5
-export LD_LIBRARY_PATH=/opt/kde5/lib:/opt/kde5/lib64:/opt/qt5/lib:/usr/lib
+export KF5=/opt/kde6
+export QTDIR=/opt/qt6
+export LD_LIBRARY_PATH=/opt/kde6/lib:/opt/kde6/lib64:/opt/qt6/lib:/usr/lib
 export XDG_DATA_DIRS=$KF5/share:$XDG_DATA_DIRS:/usr/share
 export XDG_CONFIG_DIRS=$KF5/etc/xdg:$XDG_CONFIG_DIRS:/etc/xdg
 export PATH=$KF5/bin:$KF5/usr/bin:$QTDIR/bin:$PATH
 export QT_PLUGIN_PATH=$KF5/lib/plugins:$KF5/lib64/plugins:$KF5/lib/x86_64-linux-gnu/plugins:$QTDIR/plugins:$QT_PLUGIN_PATH
 export QML2_IMPORT_PATH=$KF5/lib/qml:$KF5/lib64/qml:$KF5/lib/x86_64-linux-gnu/qml:$QTDIR/qml
 export QML_IMPORT_PATH=$QML2_IMPORT_PATH
-export KDE_SESSION_VERSION=5
-export KDE_FULL_SESSION=true
-export CMAKE_MODULE_PATH=/opt/kde5/share/:$CMAKE_MODULE_PATH
-
-export QT_ENABLE_HIGHDPI_SCALING=false
-export "QT_SCREEN_SCALE_FACTORS=1.5;1.5;1.5;1.5;1.5;1.5"
-#export QT_SCALE_FACTOR=1.5
-#export KWIN_USE_BUFFER_AGE=0
-export GDK_SCALE=2
-export GDK_DPI_SCALE=0.5
-#export QT_QPA_PLATFORM=wayland
+export CMAKE_MODULE_PATH=/opt/kde6/share/:$CMAKE_MODULE_PATH
