@@ -8,3 +8,4 @@ export QT_PLUGIN_PATH=$KF5/lib/plugins:$KF5/lib64/plugins:$KF5/lib/x86_64-linux-
 export QML2_IMPORT_PATH=$KF5/lib/qml:$KF5/lib64/qml:$KF5/lib/x86_64-linux-gnu/qml:$QTDIR/qml
 export QML_IMPORT_PATH=$QML2_IMPORT_PATH
 export CMAKE_MODULE_PATH=/opt/kde6/share/:$CMAKE_MODULE_PATH
+export PKG_CONFIG_PATH=/opt/qt6/lib/pkgconfig:/opt/kde6/lib/pkgconfig
