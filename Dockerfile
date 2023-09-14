@@ -35,7 +35,7 @@ RUN pacman -Sy --noconfirm \
     libdwarf libspectre libpwquality meson cppcheck xf86-input-libinput \
     xorg-server-devel nodejs kimageannotator perl-net-dbus openssl-1.1 wayland-protocols \
     djvulibre chmlib wget unzip flatpak gobject-introspection itstool gtk-doc graphviz xmlto \
-    packagekit packagekit gobject-introspection itstool gtk-doc libolm xf86-input-evde \
+    packagekit packagekit gobject-introspection itstool gtk-doc libolm xf86-input-evdev \
     libproxy libfakekey
 
 
