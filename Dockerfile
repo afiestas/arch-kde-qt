@@ -36,7 +36,7 @@ RUN pacman -Sy --noconfirm \
     xorg-server-devel nodejs kimageannotator perl-net-dbus openssl-1.1 wayland-protocols \
     djvulibre chmlib wget unzip flatpak gobject-introspection itstool gtk-doc graphviz xmlto \
     packagekit packagekit gobject-introspection itstool gtk-doc libolm xf86-input-evdev \
-    libproxy libfakekey gi-docgen appstream-qt
+    libproxy libfakekey gi-docgen appstream-qt python-pip xf86-input-wacom 
 
 
 
