@@ -1,4 +1,4 @@
-FROM archlinux
+FROM archlinux:latest
 
 WORKDIR /home/afiestas/Projects/
 
@@ -17,6 +17,11 @@ ENV CMAKE_MODULE_PATH=/opt/kde6/share/:$CMAKE_MODULE_PATH
 
 COPY mirrorlist /etc/pacman.d/mirrorlist
 
+RUN sed -i '/\[testing\]/,/Include/{s/^#//}' /etc/pacman.conf && \
+    sed -i '/\[community-testing\]/,/Include/{s/^#//}' /etc/pacman.conf && \
+    sed -i '/\[multilib-testing\]/,/Include/{s/^#//}' /etc/pacman.conf && \
+    echo -e "\n[kde-unstable]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+
 RUN sed -i 's/ParallelDownloads = 5/ParallelDownloads = 20/' /etc/pacman.conf
 RUN pacman-key --init && pacman -Sy --noconfirm archlinux-keyring pacman
 RUN pacman -Syu --noconfirm
@@ -33,7 +38,7 @@ RUN pacman -Sy --noconfirm \
     libraw llvm subversion astyle clang intltool libvncserver eigen freecell-solver    \
     python-pyqt6 quazip gsl vc opencolorio libheif sip libmtp qgpgme tinyxml2 \
     libdwarf libspectre libpwquality meson cppcheck xf86-input-libinput \
-    xorg-server-devel nodejs kimageannotator perl-net-dbus openssl-1.1 wayland-protocols \
+    xorg-server-devel nodejs perl-net-dbus openssl-1.1 wayland-protocols \
     djvulibre chmlib wget unzip flatpak gobject-introspection itstool gtk-doc graphviz xmlto \
     packagekit packagekit gobject-introspection itstool gtk-doc libolm xf86-input-evdev \
     libproxy libfakekey gi-docgen appstream-qt python-pip xf86-input-wacom 
