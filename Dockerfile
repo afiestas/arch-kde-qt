@@ -42,7 +42,7 @@ RUN pacman -Sy --noconfirm \
     djvulibre chmlib wget unzip flatpak gobject-introspection itstool gtk-doc graphviz xmlto \
     packagekit packagekit gobject-introspection itstool gtk-doc libolm xf86-input-evdev \
     libproxy libfakekey gi-docgen appstream-qt python-pip xf86-input-wacom python-html5lib \
-    perl-json-xs perl-yaml-pp libdisplay-info
+    perl-json-xs perl-yaml-pp libdisplay-info mpv
 
 
 
