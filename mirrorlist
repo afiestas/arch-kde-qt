@@ -1,5 +1,3 @@
-Server = https://mirror.f4st.host/archlinux/$repo/os/$arch
-Server = https://mirrors.dotsrc.org/archlinux/$repo/os/$arch
 Server = https://mirror.pseudoform.org/$repo/os/$arch
 Server = https://mirror.selfnet.de/archlinux/$repo/os/$arch
 Server = https://mirror.23m.com/archlinux/$repo/os/$arch
