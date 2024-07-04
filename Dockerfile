@@ -36,7 +36,7 @@ RUN pacman -Sy --noconfirm \
     perl re2  krb5 libgravatar boost perl-io-socket-ssl perl-yaml-syck python-sphinx \
     docbook-xsl doxygen libkdcraw sane ruby-test-unit swig xsd sassc python-cairo gtk2 \
     libraw llvm subversion astyle clang intltool libvncserver eigen freecell-solver    \
-    python-pyqt6 quazip gsl vc opencolorio libheif sip libmtp qgpgme tinyxml2 \
+    python-pyqt6 quazip gsl vc opencolorio libheif sip libmtp qgpgme-qt6 tinyxml2 \
     libdwarf libspectre libpwquality meson cppcheck xf86-input-libinput \
     xorg-server-devel nodejs perl-net-dbus openssl-1.1 wayland-protocols \
     djvulibre chmlib wget unzip flatpak gobject-introspection itstool gtk-doc graphviz xmlto \
