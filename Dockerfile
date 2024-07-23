@@ -18,6 +18,8 @@ ENV CMAKE_MODULE_PATH=/opt/kde6/share/:$CMAKE_MODULE_PATH
 COPY mirrorlist /etc/pacman.d/mirrorlist
 
 RUN sed -i '/\[testing\]/,/Include/{s/^#//}' /etc/pacman.conf && \
+    sed -i '/\[core-testing\]/,/Include/{s/^#//}' /etc/pacman.conf && \
+    sed -i '/\[extra-testing\]/,/Include/{s/^#//}' /etc/pacman.conf && \
     sed -i '/\[community-testing\]/,/Include/{s/^#//}' /etc/pacman.conf && \
     sed -i '/\[multilib-testing\]/,/Include/{s/^#//}' /etc/pacman.conf && \
     echo -e "\n[kde-unstable]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
