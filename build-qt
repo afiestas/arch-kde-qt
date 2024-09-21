@@ -6,7 +6,7 @@ rm -rf /opt/qt6/*
 rm -rf /home/afiestas/Projects/qt6
 
 cd /home/afiestas/Projects/
-git clone git://code.qt.io/qt/qt5.git --branch 6.7 qt6
+git clone git://code.qt.io/qt/qt5.git --branch 6.8 qt6
 cd qt6
 ./init-repository
 
