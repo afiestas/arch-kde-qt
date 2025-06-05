@@ -45,7 +45,7 @@ RUN pacman -Sy --noconfirm \
     packagekit packagekit gobject-introspection itstool gtk-doc libolm xf86-input-evdev \
     libproxy libfakekey gi-docgen appstream-qt python-pip xf86-input-wacom python-html5lib \
     perl-json-xs perl-yaml-pp libdisplay-info mpv freerdp freerdp2 microsoft-gsl system-config-printer \
-    opencv glib2-devel lzip pyside6 shiboken
+    opencv glib2-devel lzip pyside6 shiboken6
 
 
 
