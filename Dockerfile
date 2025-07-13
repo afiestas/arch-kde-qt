@@ -46,7 +46,8 @@ RUN pacman -Sy --noconfirm \
     libproxy libfakekey gi-docgen appstream-qt python-pip xf86-input-wacom python-html5lib \
     perl-json-xs perl-yaml-pp libdisplay-info mpv freerdp freerdp2 microsoft-gsl system-config-printer \
     opencv glib2-devel lzip pyside6 shiboken6 python-build libical libvlc tesseract tesseract-data-eng \
-    python-twisted black-hole-solver potrace cargo lttng-ust gn python-setuptools xdotool xapian-core
+    python-twisted black-hole-solver potrace cargo lttng-ust gn python-setuptools xdotool xapian-core \
+    tesseract tesseract-data-eng
 
 
 
